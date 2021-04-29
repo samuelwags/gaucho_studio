@@ -1,17 +1,53 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import sanityClient from '@sanity/client';
+import './Global.css';
+
+import Projects from './components/Projects';
+import Header from './components/Header';
+
+const client = sanityClient({
+    projectId: 'tfzftnd4',
+    dataset: 'production',
+    apiVersion: '2020-04-20',
+    token: '',
+    useCdn: true,
+});
+
+class App extends React.Component {
+    constructor() {
+        super();
+        this.getProjects();
+    }
+
+    state = {
+        projects: []
+    }
+
+    getProjects = async () => {
+        const query = '*[_type == "project"]{title, role, collaborators, thumbnail{asset->}}';
+        try {
+            const response = await client.fetch(query);
+            console.log(response);
+            this.setState({
+                projects: response
+            });
+        } catch {
+            console.log("error");
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <Header />
+                <Projects projects={this.state.projects} />
+            </div>
+        )
+    }
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <App />,
+    document.querySelector("#root")
+)
