@@ -1,12 +1,11 @@
 import React from 'react';
-import { ReactSVG } from 'react-svg';
 
 class GauchoSVG extends React.Component {
 
     render() {
         return (
             <div>
-                <img src="/gaucho.svg" />
+                <img alt="gaucho studio's logo" src="/gaucho.svg" />
             </div>
         )
     }

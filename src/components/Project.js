@@ -1,7 +1,4 @@
-import { getByTitle } from '@testing-library/dom';
 import React from 'react';
-
-const imageAPI = "https://cdn.sanity.io/images/tfzftnd4/production/";
 
 class Project extends React.Component {
     
@@ -11,7 +8,7 @@ class Project extends React.Component {
 
         return (
             <div class="project">
-                <img class="thumbnail" src={thumbnail.asset.url} />
+                <img alt={"screencapture of website for" + {title}} class="thumbnail" src={thumbnail.asset.url} />
                 <h2>{title}</h2>
                 <p>{role}</p>
                 <p>{collaborators}</p>
