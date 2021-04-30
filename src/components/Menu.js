@@ -1,5 +1,4 @@
 import React from 'react';
-import {throttle} from 'lodash.throttle'
 import './Menu.css';
 
 class Menu extends React.Component {
