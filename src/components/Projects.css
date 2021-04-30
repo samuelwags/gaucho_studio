@@ -1,0 +1,8 @@
+.projects {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50vw
+}
+.project p {
+    padding: 0 1rem;
+}

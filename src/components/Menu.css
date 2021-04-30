@@ -1,0 +1,35 @@
+.menu {
+    width: 100%;
+}
+
+.menuList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    height: 2rem;
+    padding: 0;
+    margin: 2rem 0 0 0;
+}
+.menuItem {
+    display: block;
+    box-sizing: border-box;
+    flex-grow: 1;
+    text-align: center;
+    list-style: none;
+    background: white;
+    margin: 0 6rem;
+    border: 1px solid black;
+    line-height: 2rem;
+    font-family: "Roboto Mono";
+}
+
+.menuItem:hover {
+    background: grey;
+    cursor: pointer;
+}
+
+.menuItem.active {
+    background:black;
+    color: white;
+}
