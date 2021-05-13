@@ -4,7 +4,7 @@ class GauchoSVG extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="gauchoSVG">
                 <img alt="gaucho studio's logo" src="/gaucho.svg" />
             </div>
         )

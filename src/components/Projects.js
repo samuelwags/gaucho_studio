@@ -1,12 +1,12 @@
 import React from 'react';
 import Project from './Project';
-import './Projects.css';
+import './Projects.scss';
 
 class Projects extends React.Component {
 
     mapProjects = () => {
         return this.props.projects.map( project => {
-            return <Project project={project} />
+            return <Project key={project.title} project={project} />
         });
     }
 

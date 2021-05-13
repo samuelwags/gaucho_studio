@@ -1,24 +1,30 @@
+@import '../vars';
+
 .menu {
     width: 100%;
+    height: 4rem;
 }
 
 .menuList {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: grid;
+    padding: 0 6rem;
     box-sizing: border-box;
+    grid-template-columns: 1fr 1fr;
     height: 2rem;
-    padding: 0;
     margin: 2rem 0 0 0;
+    column-gap: 6rem;
+
+    @include respond-to(phone) {
+        padding: 0 10px;
+        column-gap: 10px;
+    }
 }
 .menuItem {
     display: block;
     box-sizing: border-box;
-    flex-grow: 1;
     text-align: center;
     list-style: none;
     background: white;
-    margin: 0 6rem;
     border: 1px solid black;
     line-height: 2rem;
     font-family: "Roboto Mono";
