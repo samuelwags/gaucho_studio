@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import sanityClient from '@sanity/client';
-import './Global.css';
+import './Global.scss';
 
 import Projects from './components/Projects';
 import Header from './components/Header';

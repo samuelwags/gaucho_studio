@@ -37,6 +37,10 @@
         grid-column: 1/2;
     }
     .aboutBlocks {
+        h2 {
+            margin: 3rem 0 0;
+        }
+
         @include respond-to(phone) {
             padding-bottom: 5rem;
             h2 {
