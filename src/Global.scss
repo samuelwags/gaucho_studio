@@ -1,5 +1,16 @@
-.projects {
-    width: 100%;
+@import "./vars";
+
+.content {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include respond-to(phone) {
+        position: relative;
+        display: block;
+        bottom: unset;
+    }
 }
 img {
     max-width: 100%;
@@ -8,6 +19,7 @@ a {
     color: black;
     text-decoration: none;
     border-bottom: 2px solid black;
+    transition: color 0.2s ease, border-color 0.5s ease;
 
     &:hover {
         color: blue !important;
@@ -16,4 +28,109 @@ a {
     &:visited {
         color: black;
     }
+}
+
+
+.content > div {
+    /* width */
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+            background:black;
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgb(40, 40, 40);
+        cursor: pointer !important;
+    }
+}
+
+.aboutPage {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    padding: 3vw;
+    height: 100%;
+    overflow-y: scroll;
+    font-family: "Roboto Mono", monospace;
+    transition: background 0.1s linear;
+
+    @include respond-to(phone) {
+        padding: 1rem 20px 5rem;
+        overflow-y: auto;
+    }
+
+    a {
+        color: white;
+        border-color: white;
+        &:hover {
+            color: grey !important;
+            border-color: grey !important;
+        }
+    }
+
+    .gauchoSVG {
+        grid-column: 1/2;
+        * {
+            fill: white;
+        }
+    }
+    .aboutBlocks {
+        h2 {
+            margin: 3rem 0 0;
+        }
+
+        @include respond-to(phone) {
+            h2 {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.projects {
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: scroll;
+    margin: 0 auto;
+    padding: 3vw;
+    
+
+    @include respond-to(phone) {
+        overflow-y: auto;
+        padding: 5rem 10px;
+    }
+
+    .project {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto 8rem;
+        text-align: center;
+        transition: opacity 0.5s ease;
+        opacity: 1;
+
+        &.hide {
+            opacity: 0;
+        }
+
+        @include respond-to(phone) {
+            margin-bottom: 3rem;
+        }
+    }
+}
+.project p {
+    padding: 0 1rem;
 }

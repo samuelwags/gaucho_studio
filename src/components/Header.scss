@@ -13,39 +13,3 @@
     top: calc(100vh - 6rem);
     top: calc((var(--vh, 1vh) * 100) - 10rem);
 }
-
-.aboutPage {
-    position: absolute;
-    top: 0; right: 0; left: 0; bottom: 0;
-    background-color: white;
-    z-index: -1;
-    padding: 4rem 6rem 10rem;
-    color: black;
-    font-family: "Roboto Mono", monospace;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 6rem;
-    
-    @include respond-to(phone) {
-        grid-template-columns: 1fr;
-        padding: 1rem 10px;
-        overflow: scroll;;
-    }
-
-
-    .gauchoSVG {
-        grid-column: 1/2;
-    }
-    .aboutBlocks {
-        h2 {
-            margin: 3rem 0 0;
-        }
-
-        @include respond-to(phone) {
-            padding-bottom: 5rem;
-            h2 {
-                text-align: center;
-            }
-        }
-    }
-}
