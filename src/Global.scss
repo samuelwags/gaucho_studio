@@ -3,6 +3,7 @@
 .content {
     position: fixed;
     top: 0; right: 0; bottom: 0; left: 0;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -55,18 +56,18 @@ a {
 }
 
 .aboutPage {
-    display: inline-block;
     position: relative;
     box-sizing: border-box;
     background-color: black;
     color: white;
     padding: 3vw;
-    height: 100%;
-    overflow-y: scroll;
+    height: 100vh;
+    overflow:auto;
     font-family: "Roboto Mono", monospace;
     transition: background 0.1s linear;
 
     @include respond-to(phone) {
+        height: unset;
         padding: 1rem 20px 5rem;
         overflow-y: auto;
     }
@@ -103,13 +104,14 @@ a {
     width: 100%;
     display: inline-block;
     box-sizing: border-box;
-    height: 100%;
+    height: 100vh;
     overflow-y: scroll;
     margin: 0 auto;
     padding: 3vw;
     
 
     @include respond-to(phone) {
+        height: unset;
         overflow-y: auto;
         padding: 5rem 10px;
     }

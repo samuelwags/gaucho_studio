@@ -40,7 +40,6 @@ class About extends React.Component {
             let difference = newDestination - this.state.color.r;
             this.colorDeltas.r = difference / steps;
             this.colorCycles.r = steps;
-            console.log("r new transition")
         }
         if (rgbCycles.g === 0) {
             let newDestination = Math.floor(Math.random() * 255);
@@ -48,7 +47,6 @@ class About extends React.Component {
             let difference = newDestination - this.state.color.g;
             this.colorDeltas.g = difference / steps;
             this.colorCycles.g = steps;
-            console.log("g new transition")
         }
         if (rgbCycles.b === 0) {
             let newDestination = Math.floor(Math.random() * 255);
@@ -56,7 +54,6 @@ class About extends React.Component {
             let difference = newDestination - this.state.color.b;
             this.colorDeltas.b = difference / steps;
             this.colorCycles.b = steps;
-            console.log("b new transition")
         }
 
         return true;
@@ -88,7 +85,7 @@ class About extends React.Component {
 
     mapAboutBlocks = (textBlocks) => {
         let blocks = textBlocks.map(block => {
-            let string =  `<div class="aboutBlock"><h2>${block.header}</h2>${this.mapRichText(block.content)}</div>`;
+            let string =  `<div class="aboutBlock" key=${block.header}><h2>${block.header}</h2>${this.mapRichText(block.content)}</div>`;
             return parse(string);
         });
         return blocks;

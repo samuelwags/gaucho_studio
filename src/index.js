@@ -36,7 +36,6 @@ class App extends React.Component {
         const query = '*[_type == "project"]{title, role, collaborators, thumbnail{asset->}}';
         try {
             const response = await client.fetch(query);
-            console.log(response);
             this.setState({
                 projects: response
             });
@@ -49,7 +48,6 @@ class App extends React.Component {
         const query = '*[_type == "page" && title == "About"]{...}';
         try {
             const response = await client.fetch(query);
-            console.log(response);
             this.setState({
                 aboutContent: response[0].content
             });
