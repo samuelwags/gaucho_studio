@@ -21,10 +21,10 @@ class Project extends React.Component {
     }
 
     render() {
-        const {title, role, collaborators, thumbnail} = this.props.project;
+        const {title, role, collaborators, thumbnail, href} = this.props.project;
 
         return (
-            <div className={this.state.show ? "project" : "project hide"} ref={this.projectEl}>
+            <a className={this.state.show ? "project" : "project hide"} target="_blank" rel="noopener noreferrer" ref={this.projectEl} href={href}>
                 {this.state.componentWidth > 0 ? 
                     <img 
                         onLoad={this.handleLoad} 
@@ -36,7 +36,7 @@ class Project extends React.Component {
                 <h2>{title}</h2>
                 <p>{role}</p>
                 <p>{collaborators}</p>
-            </div>
+            </a>
         )
     }
 }

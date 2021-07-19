@@ -33,7 +33,7 @@ class App extends React.Component {
     // }
 
     getProjects = async () => {
-        const query = '*[_type == "project"]{title, role, collaborators, thumbnail{asset->}}';
+        const query = '*[_type == "project"]{title, role, collaborators, href, thumbnail{asset->}}';
         try {
             const response = await client.fetch(query);
             this.setState({
