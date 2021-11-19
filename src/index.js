@@ -28,10 +28,6 @@ class App extends React.Component {
         alignTop: true
     }
 
-    // componentDidMount() {
-    //     window.addEventListener('wheel', this.watchScroll);
-    // }
-
     getProjects = async () => {
         const query = '*[_type == "project"]{title, role, collaborators, href, thumbnail{asset->}}';
         try {
@@ -55,28 +51,6 @@ class App extends React.Component {
             console.log("error fetching about");
         }
     }
-
-    // toggleAbout = (newAbout = !this.state.about) => {
-    //     if (newAbout && this.state.alignTop) {
-    //         this.setState({about: newAbout, alignTop: false});
-    //     } else if (!newAbout && this.state.alignTop) {
-    //         this.setState({about: newAbout, alignTop: false})
-    //     } else {
-    //         this.setState({about: newAbout});
-    //     }
-    // }
-
-    // toggleTopAlign = (newAlignTop = !this.state.alignTop) => {
-    //     this.setState({alignTop: newAlignTop});
-    // }
-
-    // watchScroll = (event) => {
-    //     if (event.deltaY > 0) {
-    //         this.setState({alignTop: false});
-    //     } else {
-    //         this.setState({alignTop: true});
-    //     }
-    // }
 
     render() {
         return (
