@@ -55,7 +55,6 @@ class About extends React.Component {
             this.colorDeltas.b = difference / steps;
             this.colorCycles.b = steps;
         }
-
         return true;
     }
 
